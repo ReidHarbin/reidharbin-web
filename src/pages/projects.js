@@ -17,7 +17,18 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                 <div className="p-2">
                     <div className="text-3xl">
                         <h1>{title}</h1>
-                        <div className="">
+                    </div>
+                    <div className="flex flex-col text-sm mt-2">
+                        <p1 className="pb-2">
+                            Backend: {backendTools}
+                        </p1>
+                        {(frontendTools !== null) ?
+                            <p1 className="mb-2">
+                                Frontend: {frontendTools}
+                            </p1> :
+                            null    
+                        }
+                        <div className="text-3xl">
                             <a className="hover:text-green-500 mx-2" href={githubLink} target="_blank" rel="noopener noreferrer">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
@@ -28,17 +39,6 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                                 null
                             }
                         </div>
-                    </div>
-                    <div className="flex flex-col text-sm mt-2">
-                        <p1 className="pb-2">
-                            Backend: {backendTools}
-                        </p1>
-                        {(frontendTools !== null) ?
-                            <p1 className="">
-                                Frontend: {frontendTools}
-                            </p1> :
-                            null    
-                        }
                     </div>
                     <div className="mt-2 border-t-2">
                         <p1 >
@@ -65,7 +65,7 @@ const Projects = () => {
                 "this will be the description")}
                 
             {project("Kindle Publishing Service", 
-                "https://github.com/BloomTechBackend/bd-team-project-reid-harbin", 
+                "https://github.com/BloomTechBackend/bd-kindle-publishing-service-ReidHarbin", 
                 null,
                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                 null,
@@ -73,7 +73,7 @@ const Projects = () => {
                 "this will be the description")}
 
             {project("Music Playlist Service", 
-                "https://github.com/BloomTechBackend/bd-team-project-reid-harbin", 
+                "https://github.com/BloomTechBackend/bd-working-with-databases-music-playlist-service-ReidHarbin", 
                 null,
                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                 null,
