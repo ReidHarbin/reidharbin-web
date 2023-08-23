@@ -13,7 +13,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="md:w-1/2 flex flex-col place-content-center">
-                <div className="">
+                <div className="w-auto inline">
                     <h1 className="text-3xl md:text-5xl text-center">
                         Backend Developer
                     </h1>
@@ -22,15 +22,12 @@ const Home = () => {
                     </h2>
                 </div>
                 <div className="flex flex-col text-center w-full md:px-24">
-                    <p1 className="inline">
-                    I thrive on creating scalable applications while leveraging AWS services to their fullest potential. With a knack for intuitive API design, I ensure seamless client interactions. Let's collaborate to turn ideas into exceptional software.
-                    </p1>
+                    <p className="inline">
+                        I thrive on creating scalable applications while leveraging AWS services to their fullest potential. 
+                        With a knack for intuitive API design, I ensure seamless client interactions. Let's collaborate to turn 
+                        ideas into exceptional software.
+                    </p>
                 </div>
-                <p1 className="text-lg text-end px-4">
-                    <a className="hover:border-cyan-900 hover:text-cyan-900" href="./projects"> 
-                        See my work <FontAwesomeIcon icon={faRightLong}/> 
-                    </a>
-                </p1>
             </div>
         </div>
 
