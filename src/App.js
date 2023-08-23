@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 
 import Contact from './pages/contact';
 import Blog from './pages/blog';
@@ -17,19 +17,18 @@ function App() {
             <div className="flex flex-col h-screen font-ArchivoBlack">
                 <div className="bg-slate-900 p-2">
                     <div className="flex justify-end">
-                        <NavLink className="text-white text-lg px-3 " to="pages/home">Home</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="pages/projects">Projects</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="pages/blog">Blog</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="pages/contact">Contact</NavLink>
+                        <NavLink className="text-white text-lg px-3 " to="/">Home</NavLink>
+                        <NavLink className="text-white text-lg px-3 " to="/projects">Projects</NavLink>
+                        <NavLink className="text-white text-lg px-3 " to="/blog">Blog</NavLink>
+                        <NavLink className="text-white text-lg px-3 " to="/contact">Contact</NavLink>
                     </div>
                 </div>
                 <Routes>
-                    <Route path='pages/home' element={<Home/>} />
-                    <Route path='pages/contact' element={<Contact/>} />
-                    <Route path='pages/projects' element={<Projects/>} />
-                    <Route path='pages/blog' element={<Blog />} />
+                    <Route path='/' element={<Home />}/>
+                    <Route path='/contact' element={<Contact/>} />
+                    <Route path='/projects' element={<Projects/>} />
+                    <Route path='/blog' element={<Blog />} />
                 </Routes>
-
             </div>
         </Router>
 
