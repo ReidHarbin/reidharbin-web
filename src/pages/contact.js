@@ -31,14 +31,14 @@ const Contact = () => {
                     <FontAwesomeIcon className="pl-1" icon={faM}/>
                 </div>
                 <div className="flex md:text-8xl pt-4 justify-center">
-                    <div className="mr-2">
-                        <a href="https://www.linkedin.com/in/reidharbin/" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon  icon={faLinkedin} size="2xl" />
+                    <div className="mr-2 ">
+                        <a className="hover:text-blue-500" href="https://www.linkedin.com/in/reidharbin/" target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon   icon={faLinkedin} size="2xl" />
                         </a>
                     </div>
-                    <div className="ml-2">
-                        <a href="https://github.com/ReidHarbin" target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faGithub} size="2xl" />
+                    <div className="ml-2 ">
+                        <a className="hover:text-green-500" href="https://github.com/ReidHarbin " target="_blank" rel="noopener noreferrer">
+                            <FontAwesomeIcon  icon={faGithub} size="2xl" />
                         </a>
                     </div>
                 </div>
