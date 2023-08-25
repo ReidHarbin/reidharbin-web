@@ -19,9 +19,9 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                         <h1>{title}</h1>
                     </div>
                     <div className="flex flex-col text-sm mt-2">
-                        <p1 className="pb-2">
+                        <p className="pb-2">
                             Backend: {backendTools}
-                        </p1>
+                        </p>
                         {(frontendTools !== null) ?
                             <p1 className="mb-2">
                                 Frontend: {frontendTools}
@@ -41,9 +41,9 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                         </div>
                     </div>
                     <div className="mt-2 border-t-2">
-                        <p1 >
+                        <p >
                             {description}
-                        </p1>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -57,12 +57,12 @@ const Projects = () => {
     return (
         <div className="grow grid grid-cols-1 md:grid-cols-3 bg-slate-900">
             {project("TouchBase", 
-                "https://github.com/BloomTechBackend/bd-team-project-reid-harbin", 
+                "https://github.com/ReidHarbin/TouchBase", 
                 "http://touchbase.s3-website-us-west-2.amazonaws.com/",
                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                 "Javascript | React | Tailwindcss | AWS S3",
                 TouchBasePhoto,
-                "this will be the description")}
+                "This will be the description")}
                 
             {project("Kindle Publishing Service", 
                 "https://github.com/BloomTechBackend/bd-kindle-publishing-service-ReidHarbin", 
@@ -77,6 +77,13 @@ const Projects = () => {
                 null,
                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                 null,
+                MusicServicePhoto,
+                "this will be the description")}
+            {project("reidharbin.com", 
+                "https://github.com/ReidHarbin/reidharbin-web", 
+                null,
+                "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
+                "Javascript | React | Tailwindcss | AWS S3 | AWS Route53 | AWS CloudFront",
                 MusicServicePhoto,
                 "this will be the description")}
         </div>
