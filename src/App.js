@@ -10,6 +10,7 @@ import Contact from './pages/contact';
 import Blog from './pages/blog';
 import Home from './pages/home';
 import Projects from './pages/projects';
+import Post from './pages/post';
 
 function App() {
     return (
@@ -28,6 +29,8 @@ function App() {
                     <Route path='/contact' element={<Contact/>} />
                     <Route path='/projects' element={<Projects/>} />
                     <Route path='/blog' element={<Blog />} />
+                    <Route path='/blog/:postFile' element={<Post />} />
+                    <Route path='*' element={<Home />} />
                 </Routes>
             </div>
         </Router>
