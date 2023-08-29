@@ -15,12 +15,12 @@ function App() {
     return (
         <Router>
             <div className="flex flex-col h-screen font-ArchivoBlack">
-                <div className="bg-slate-900 p-2">
-                    <div className="flex justify-end">
-                        <NavLink className="text-white text-lg px-3 " to="/">Home</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="/projects">Projects</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="/blog">Blog</NavLink>
-                        <NavLink className="text-white text-lg px-3 " to="/contact">Contact</NavLink>
+                <div className="bg-gray-700 p-2">
+                    <div className="flex justify-end text-white text-lg">
+                        <NavLink className="px-3 " to="/">Home</NavLink>
+                        <NavLink className="px-3 " to="/projects">Projects</NavLink>
+                        <NavLink className="px-3 " to="/blog">Blog</NavLink>
+                        <NavLink className="px-3 " to="/contact">Contact</NavLink>
                     </div>
                 </div>
                 <Routes>
