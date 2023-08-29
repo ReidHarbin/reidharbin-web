@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      ArchivoBlack: ["Archivo Black", "sans-serif"]
+      ArchivoBlack: ["Archivo Black", "sans-serif"],
+      Archivo: ["Archivo", "sans-serif"]
     }
   },
   plugins: [],
