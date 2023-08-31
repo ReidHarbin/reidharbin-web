@@ -1,18 +1,64 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHelmetSafety } from "@fortawesome/free-solid-svg-icons";
+import { Link, Route, Router } from "react-router-dom";
+import Picture from "./images/amazon-music.jpg"
+
+const imageDir = "https://rh-posts.s3.us-west-2.amazonaws.com/images/"; //imageDir +
+const postcard = ( thumbnail, subject, title, author, date, fileName, blurb) => {
+    return (
+        <div className="flex m-4"> 
+            <div className="p-4 rounded-lg overflow-hidden w-1/2 border-green-600">
+                <img className="" src={  Picture } alt="thumbnail"></img>
+            </div>
+            <div>
+                <p>{ title }</p>
+                <p>{ subject }</p>
+                <p>{ date }</p>
+                <p>{ author }</p>
+                <p>{ blurb }</p>               
+                <Link to={ "/blog/" + fileName }> Continue Reading </Link>
+            </div>
+        </div>
+    )
+}
 
 const Blog = () => {
     return (
-        <div className="flex items-center justify-center h-screen bg-slate-900 text-white">
-            <div className="text-center">
-                <div className="md:text-8xl">
-                    <FontAwesomeIcon icon={faHelmetSafety} />
-                </div>
-                <p>
-                    This site is under construction
-                </p>
-            </div>
+        <div className="grow grid grid-cols-1 md:grid-cols-3 bg-slate-900 text-white">
+            {postcard(
+                "image3.jpg",
+                "This is the subject",
+                "Title",
+                "Reid Harbin",
+                "1/12/23",
+                "s3testfile")}
+            {postcard(
+                "image3.jpg",
+                "This is the subject",
+                "Title",
+                "Reid Harbin",
+                "1/12/23",
+                "s3testfile")}
+            {postcard(
+                "image3.jpg",
+                "This is the subject",
+                "Title",
+                "Reid Harbin",
+                "1/12/23",
+                "s3testfile")}
+            {postcard(
+                "image3.jpg",
+                "This is the subject",
+                "Title",
+                "Reid Harbin",
+                "1/12/23",
+                "s3testfile")}
+            {postcard(
+                "image3.jpg",
+                "This is the subject",
+                "Title",
+                "Reid Harbin",
+                "1/12/23",
+                "s3testfile")}
         </div>
     )
 }
