@@ -12,7 +12,7 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
         <div className="grow text-white mt-2 mb-8 mx-2 rounded-xl">
             <div className="shadow-lg shadow-gray-900 rounded-xl">
                 <div className="flex justify-center rounded-t-lg overflow-hidden max-h-56 w-full">
-                    <img  className="" src={photo} alt="thumbnail"></img>
+                    <img  className=" scale-y-110" src={photo} alt="thumbnail"></img>
                 </div>
                 <div className=" bg-gray-600 rounded-b-xl p-2">
                     <div className="flex text-2xl md:text-2xl mb-2">
@@ -29,25 +29,23 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                             }
                         </div>
                     </div>
-                    <div className="font-Archivo">
-                        <div className="font-ArchivoBlack text-md">
-                            {(backendTools) ?
-                                <h2 className="mb-2">
-                                    Backend: {backendTools}
-                                </h2> :
-                                null    
-                            }
-                            {(frontendTools) ?
-                                <h2>
-                                    Frontend: {frontendTools}
-                                </h2> :
-                                null    
-                            }
-                        </div>
-                        <p className="grow text-lg border-t-2 pt-2 mt-2">
-                            {description}
-                        </p>
+                    <div className="font-ArchivoBlack tex-md">
+                        {(backendTools) ?
+                            <h2 className="mb-2">
+                                Backend: {backendTools}
+                            </h2> :
+                            null    
+                        }
+                        {(frontendTools) ?
+                            <h2>
+                                Frontend: {frontendTools}
+                            </h2> :
+                            null    
+                        }
                     </div>
+                    <p className="font-Archivo grow text-lg border-t-2 pt-2 mt-2">
+                        {description}
+                    </p>
                 </div>
             </div>
         </div>
@@ -81,6 +79,7 @@ const Projects = () => {
                             MusicServicePhoto,
                             "This is a website that I made from scratch to showcase my work as a Backend Developer")}
                     </div>
+                    
                     <div className="mx-2 md:w-1/3">
                         {project("Kindle Publishing Service", 
                             "https://github.com/BloomTechBackend/bd-kindle-publishing-service-ReidHarbin", 
