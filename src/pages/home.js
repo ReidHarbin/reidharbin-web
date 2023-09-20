@@ -22,9 +22,9 @@ const Home = () => {
                         AWS | Java
                     </h2>
                     <p className="text-center w-3/4">
-                        I thrive on creating scalable applications while leveraging AWS services to their fullest potential. 
-                        With a knack for intuitive API design, I ensure seamless client interactions. Let's collaborate to turn 
-                        ideas into exceptional software.
+                        I find immense satisfaction in deciphering complex problems and translating them into efficient backend systems 
+                        that ensure streamlined communication between clients and data. Whether it's designing data models or building 
+                        robust APIs, I am always up for the challenge.
                     </p>
                     
                 </div>

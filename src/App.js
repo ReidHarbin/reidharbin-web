@@ -20,7 +20,6 @@ function App() {
                     <div className="flex justify-end text-white text-lg">
                         <NavLink className="px-3 " to="/">Home</NavLink>
                         <NavLink className="px-3 " to="/projects">Projects</NavLink>
-                        <NavLink className="px-3 " to="/blog">Blog</NavLink>
                         <NavLink className="px-3 " to="/contact">Contact</NavLink>
                     </div>
                 </div>
@@ -28,8 +27,6 @@ function App() {
                     <Route path='/' element={<Home />}/>
                     <Route path='/contact' element={<Contact/>} />
                     <Route path='/projects' element={<Projects/>} />
-                    <Route path='/blog' element={<Blog />} />
-                    <Route path='/blog/:postFile' element={<Post />} />
                     <Route path='*' element={<Home />} />
                 </Routes>
             </div>
