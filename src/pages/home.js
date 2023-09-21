@@ -1,19 +1,20 @@
 import React from "react";
-import ProfilePicture from './images/headshot.jpg'
+import ProfilePicture from './images/headshot-2.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightLong } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
     return (
-        <div className="md:flex grow text-white bg-gray-700 p-4 w-fit">
-            <div className="flex place-content-center items-center relative md:w-1/2 rounded-full">
-                <div className="absolute bg-slate-800 rounded-full w-11/12 blur-md h-full opacity-50"></div>
-                <img className="rounded-full drop-shadow-lg p-10 w-11/12 border border-slate-900 relative" src={ProfilePicture} alt="portrait"></img>
-                <div className="absolute right-0 text-2xl md:text-5xl border-b-2 m-2">
-                    Reid Harbin
+        <div className="md:flex grow text-white bg-gray-700 px-4 pt-4 md:overflow-hidden">
+            <div className="flex place-content-center items-end relative md:w-1/2">
+                <img className="" src={ProfilePicture} alt="portrait"></img>
+                <div className="absolute right-0 text-4xl md:text-5xl h-1/2">
+                    <p className="border-b-2">
+                        Reid Harbin
+                    </p>
                 </div>
             </div>
-            <div className="md:w-1/2 flex flex-col place-content-center my-2">
+            <div className="md:w-1/2 flex flex-col place-content-center my-4">
                 <div className="flex flex-col items-center">
                     <h1 className="text-3xl md:text-5xl text-center">
                         Backend Developer

@@ -8,15 +8,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-
+// 492 x 196 - Image base size
 const project = (title, githubLink, websiteLink, backendTools, frontendTools, photo, description) => {
     return (
-        <div className="group grow text-white mt-2 mb-8 mx-2 rounded-xl">
-            <div className="shadow-lg shadow-gray-900 rounded-xl">
+        <div className="group bg-gray-600 text-white mt-2 mb-8 mx-2 shadow-lg hover:shadow-white md:min-h-[339px] shadow-gray-900 rounded-xl md:h-96 hover:h-fit 
+                        transition duration-300">
                 <div className="flex justify-center rounded-t-lg overflow-hidden max-h-56 w-full">
-                    <img  className="w-full scale-y-110" src={photo} alt="thumbnail"></img>
+                    <img  className="w-full scale-y-110" src={photo} alt="thumbnail"></img> 
                 </div>
-                <div className="bg-gray-600 p-2 rounded-b-xl">
+                <div className="px-8 pb-8 pt-2 rounded-b-xl">
                     <div className="flex items-center text-2xl md:text-2xl mb-2">
                         <h1 >{title}</h1>
                         <div className="text-4xl">
@@ -31,7 +31,7 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                             }
                         </div>
                     </div>
-                    <div className="font-ArchivoBlack tex-md">
+                    <div className="font-ArchivoBlack text-md md:group-hover:border-b-2 mb-2">
                         {(backendTools) ?
                             <h2 className="mb-2">
                                 Backend: {backendTools}
@@ -40,19 +40,17 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
                             null    
                         }
                         {(frontendTools) ?
-                            <h2>
+                            <h2 className="mb-2">
                                 Frontend: {frontendTools}
                             </h2> :
 
-                            null    
+                            null   
                         }
                     </div>
-                    <p className="font-Archivo grow text-lg border-t-2 mt-2 pt-2 rounded-b-xl">
+                    <div className="md:group-hover:h-fit md:h-0 overflow-hidden md:border-none border-t-2 md:pt-0 pt-2 font-Archivo grow text-xl rounded-b-xl">
                         {description}
-                    </p>
-                </div>
-            </div>
-
+                    </div>
+            </div>   
         </div>
     )
 }
@@ -61,13 +59,13 @@ const project = (title, githubLink, websiteLink, backendTools, frontendTools, ph
 
 const Projects = () => {
     return (
-        <div className="bg-gray-700 grow">
-            <div className="grow">
-                <div className="md:flex md:flex-grid md:grid-col-3">
-                    <div className="mx-2 md:w-1/3">
+        <div className="bg-gray-700 grow flex justify-center">
+                <div className="grow md:flex  w-full justify-center max-w-screen-2xl">
+                    <div className="mx-2 md:w-1/3 transition-all duration-700 ease-in-out">
 
                         {/* TOUCHBASE */}
-                        {
+                        {  
+                        
                             project (
                                 "TouchBase", 
                                 "https://github.com/ReidHarbin/TouchBase", 
@@ -76,7 +74,7 @@ const Projects = () => {
                                 "Javascript | React | Tailwindcss | AWS S3",
                                 TouchBasePhoto,
                                 <p>
-                                    TouchBase is a robust REST API crafted to power a family event management application. 
+                                    TouchBase is a robust REST API I created to power a family event management application. 
                                     Through a well-considered integration of AWS services - API Gateway, Lambda, and DynamoDB 
                                     - I orchestrated a streamlined data flow from client to database. Throughout its development,
                                     I adhered to essential OOP principles and effectivly leveraged design patterns to ensure a 
@@ -84,27 +82,6 @@ const Projects = () => {
                                 </p>
                             )
                         }
-
-                        {/* ADVERTISEMENT SERVICE */}
-                        {
-                            project (
-                                "Advertisement Service", 
-                                "https://github.com/BloomTechBackend/bd-advertising-service-ReidHarbin", 
-                                null,
-                                "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
-                                null,
-                                AdServicePhoto,
-                                <p>
-                                    In this project, I developed an API to efficiently retrieve targeted ad content for users. 
-                                    To decrease latency, I managed concurrent threads responsible for checking potential ads 
-                                    using an Executor Service. Furthermore, I improved the codebase's readability by refactoring 
-                                    the code to utilize streams.
-                                </p>
-                            )
-                        }
-                    </div>
-                    
-                    <div className="mx-2 md:w-1/3">
 
                         {/* KINDLE PUBLISHING SERVICE */}
                         {
@@ -137,13 +114,12 @@ const Projects = () => {
                                 "Javascript | React | Tailwindcss | AWS S3 | AWS Route53 | AWS CloudFront",
                                 Bricks,
                                 <p>
-                                    This is a website that I made from scratch to showcase the projects that I have worked on. 
                                 </p>
                             )
                         }
                     </div>
-                    <div className="mx-2 md:w-1/3">
-
+                    
+                    <div className="mx-2 md:w-1/3 transition-all duration-700 ease-in-out">
                         {/* MUSIC PLAYLIST SERVICE */}
                         {
                             project (
@@ -163,9 +139,25 @@ const Projects = () => {
                                 </p>
                             )
                         }
+                        {/* ADVERTISEMENT SERVICE */}
+                        {
+                            project (
+                                "Advertisement Service", 
+                                "https://github.com/BloomTechBackend/bd-advertising-service-ReidHarbin", 
+                                null,
+                                "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
+                                null,
+                                AdServicePhoto,
+                                <p>
+                                    In this project, I developed an API to efficiently retrieve targeted ad content for users. 
+                                    To decrease latency, I managed concurrent threads responsible for checking potential ads 
+                                    using an Executor Service. Furthermore, I improved the codebase's readability by refactoring 
+                                    the code to utilize streams.
+                                </p>
+                            )
+                        }
                     </div>
                 </div>
-            </div>
         </div>
     )
 }
