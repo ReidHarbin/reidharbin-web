@@ -1,13 +1,14 @@
 import React from "react";
 import ProfilePicture from './images/headshot-2.png'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightLong } from "@fortawesome/free-solid-svg-icons";
+import Placeholder from './images/placeholder-headshot.png'
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Home = () => {
     return (
         <div className="md:flex grow text-white bg-gray-700 px-4 pt-4 md:overflow-hidden">
             <div className="flex place-content-center items-end relative md:w-1/2">
-                <img className="" src={ProfilePicture} alt="portrait"></img>
+                <LazyLoadImage effect="blur" placeholderSrc={Placeholder} src={ProfilePicture}></LazyLoadImage>
                 <div className="absolute right-0 text-4xl md:text-5xl h-1/2">
                     <p className="border-b-2">
                         Reid Harbin

@@ -2,19 +2,26 @@ import React from "react";
 import TouchBasePhoto from "./images/touchbase-stock-blue.jpg";
 import KindleServicePhoto from "./images/kindle-service.png";
 import MusicServicePhoto from "./images/amazon-music.jpg";
-import Bricks from "./images/bricks.jpg";
 import AdServicePhoto from "./images/ads-photo.png";
+import TouchBasePhotoPlaceholder from "./images/touchbase-stock-blue-placeholder.jpg";
+import KindleServicePhotoPlaceholder from "./images/kindle-service-placeholder.png";
+import MusicServicePhotoPlaceholder from "./images/amazon-music-placeholder.jpg";
+import AdServicePhotoPlaceholder from "./images/ads-photo-placeholder.png";
+import Bricks from "./images/bricks.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css'
+
 
 // 492 x 196 - Image base size
-const project = (title, githubLink, websiteLink, backendTools, frontendTools, photo, description) => {
+const project = (title, githubLink, websiteLink, backendTools, frontendTools, photo, placeholder, description) => {
     return (
         <div className="group bg-gray-600 text-white mt-2 mb-8 mx-2 shadow-lg hover:shadow-white md:min-h-[339px] shadow-gray-900 rounded-xl md:h-96 hover:h-fit 
                         transition duration-300">
-                <div className="flex justify-center rounded-t-lg overflow-hidden max-h-56 w-full">
-                    <img  className="w-full scale-y-110" src={photo} alt="thumbnail"></img> 
+                <div className="flex justify-center rounded-t-lg overflow-hidden max-h-56 w-full min-h-[50%] bg-blue-400">
+                    <LazyLoadImage effect="blur" place className="w-full h-full" placeholderSrc={placeholder} src={photo} ></LazyLoadImage> 
                 </div>
                 <div className="px-8 pb-8 pt-2 rounded-b-xl">
                     <div className="flex items-center text-2xl md:text-2xl mb-2">
@@ -72,13 +79,17 @@ const Projects = () => {
                                 "http://touchbase.s3-website-us-west-2.amazonaws.com/",
                                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                                 "Javascript | React | Tailwindcss | AWS S3",
-                                TouchBasePhoto,
+                                TouchBasePhoto, TouchBasePhotoPlaceholder,
                                 <p>
-                                    TouchBase is a robust REST API I created to power a family event management application. 
-                                    Through a well-considered integration of AWS services - API Gateway, Lambda, and DynamoDB 
-                                    - I orchestrated a streamlined data flow from client to database. Throughout its development,
-                                    I adhered to essential OOP principles and effectivly leveraged design patterns to ensure a 
-                                    scalable and maintainable codebase.
+                                    TouchBase a is full stack family event management application I designed and developed.
+                                    Leveraging the power of AWS services, including API Gateway, Lambda, 
+                                    and DynamoDB, I established a highly efficient REST API for seamlessly creating, receiving, 
+                                    and joining family events. To ensure clean and maintainable code, I followed essential 
+                                    Object-Oriented Programming principles and employed proven design patterns to create 
+                                    modular and reusable code for each service.The application also features an interactive 
+                                    frontend crafted with React and Tailwind, providing users with an intuitive interface. 
+                                    Additionally, I integrated a notification system that alerts users about events relevant to 
+                                    their involvement.
                                 </p>
                             )
                         }
@@ -91,7 +102,7 @@ const Projects = () => {
                                 null,
                                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                                 null,
-                                KindleServicePhoto,
+                                KindleServicePhoto, KindleServicePhotoPlaceholder,
                                 <p>
                                     This project aimed to simulate the creation of a new Amazon Kindle Publishing Service. 
                                     I deciphered complex documentation to create UML Class Diagrams to help understand 
@@ -112,7 +123,7 @@ const Projects = () => {
                                 null,
                                 null,
                                 "Javascript | React | Tailwindcss | AWS S3 | AWS Route53 | AWS CloudFront",
-                                Bricks,
+                                Bricks, null,
                                 <p>
                                 </p>
                             )
@@ -128,14 +139,17 @@ const Projects = () => {
                                 null,
                                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                                 null,
-                                MusicServicePhoto,
+                                MusicServicePhoto, MusicServicePhotoPlaceholder,
                                 <p>
-                                   In this project, I developed a REST API for managing music playlists. 
-                                   I enabled users to create, read, update, and add songs to their playlists. 
-                                   To ensure secure and consistent data access, I implemented the DAO design pattern. 
-                                   I also improved code modularity, maintainability, and scalability by streamlining 
-                                   dependency injection using Dagger. To optimize request routing, I configured API Gateway 
-                                   endpoints to efficiently direct requests to their corresponding Lambda request handlers.             
+                                    This service is a robust REST API for music playlist management, 
+                                    offering users the ability to execute various actions, including playlist creation,
+                                    reading, updating, and adding songs. To ensure secure and centralized data access, 
+                                    I integrated the Data Access Object design pattern, guaranteeing safe and 
+                                    consistent interactions with the underlying database. For improved code structure 
+                                    and maintainability, I streamlined dependency injection through the use of Dagger, 
+                                    enhancing modularity and scalability. Furthermore, I configured API Gateway 
+                                    endpoints meticulously, optimizing the routing of requests to their respective 
+                                    Lambda request handlers, thus ensuring efficient and seamless API performance.                                                                      
                                 </p>
                             )
                         }
@@ -147,12 +161,13 @@ const Projects = () => {
                                 null,
                                 "Java | AWS APIGateway | AWS Lambda | AWS DynamoDB | AWS CloudFormation",
                                 null,
-                                AdServicePhoto,
+                                AdServicePhoto, AdServicePhotoPlaceholder,
                                 <p>
-                                    In this project, I developed an API to efficiently retrieve targeted ad content for users. 
-                                    To decrease latency, I managed concurrent threads responsible for checking potential ads 
-                                    using an Executor Service. Furthermore, I improved the codebase's readability by refactoring 
-                                    the code to utilize streams.
+                                    This service delivers personalized advertisement content to users. 
+                                    To significantly reduce latency, I implemented threads allowing 
+                                    for concurrent checks for potential advertisements. Using an Executor Service, 
+                                    I optimized the management and rescource allocation of the threads. 
+                                    I enhanced the codebase's readability by introducing the use of streams. 
                                 </p>
                             )
                         }
